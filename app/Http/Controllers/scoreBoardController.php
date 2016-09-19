@@ -63,7 +63,8 @@ class scoreBoardController extends Controller {
 
     public function logs()
     {
-        return view('logs');
+        $scores = DB::select('select * from scoreBoard');
+        return view('logs', compact('scores'));
     }
 
     public function displayForm()
