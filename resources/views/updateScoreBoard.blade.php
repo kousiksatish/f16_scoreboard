@@ -27,23 +27,29 @@ select {
 @endif
 
 
-<div style="padding:20px;"><form role="form" method="post" action=" {{ action('scoreBoardController@updateScore') }}">
+<div style="padding:20px;">
+
+<form class="form-horizontal" method="post" action="send_gcm.php">
+
+
 
   <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-	<div>
-    	<div class="mainselection">
-       	College:
-    	   	<select name="college" style="padding-left:5%" required>
+  <div class="form-group">
+      <label for="college" class="col-sm-2 control-label" >College</label>
+      <div class="col-sm-3">
+      	<select name="college" class="form-control" required>
 	    	<option disabled selected value>select a college</option>
 	    	@foreach($colleges as $college)
 					 <option value= {{  $college->id  }}>{{  $college->name  }}</option>
 			@endforeach
-			</select>
-			</div>
-		<br><br><br>
-		<div class="mainselection">
-		 Event:
-		 <select name="event" style="padding-left:5%"required>
+        </select>
+      </div>
+  </div>
+
+  <div class="form-group">
+      <label for="events" class="col-sm-2 control-label">Event</label>
+      <div class="col-sm-3">
+        <select name="event" class="form-control" required>
 		  <option disabled selected value >select an event</option>
 		  <option value="English Lits"> English Lits</option>
 		  <option value="Tamil Lits">Tamil Lits</option>
@@ -53,22 +59,30 @@ select {
 		  <option value="Photography">Photography</option>
 		  <option value="Arts">Arts</option>
 		</select>
-		</div>
-<br><br><br>
-		<div style="margin-left:35px;">Points:
-		<br>
-    	<input type="number" id="points" name="points"style="width:250px;height:32px;"required>
-    	</div>
+      </div>
+  </div>
 
-    	
-	</div>
+  <div class="form-group">
+      <label for="points" class="col-sm-2 control-label">Position</label>
+      <div class="col-sm-3">
+        <input class="form-control" type="number" name="position" required>
+      </div>
+  </div>
 
+  <div class="form-group">
+      <label for="points" class="col-sm-2 control-label">Points</label>
+      <div class="col-sm-3">
+        <input class="form-control" type="number" name="points" required>
+      </div>
+  </div>
 
-
-<br><br>
- 	<button style="margin-left:35px;"type="submit" class="btn btn-primary">Submit</button>
-
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-3">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+    </div>
 </form>
+
 </div>
 </html>
 
