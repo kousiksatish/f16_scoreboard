@@ -17,13 +17,10 @@ class scoreBoardController extends Controller {
         $points = DB::table('scoreBoard')
                     ->select('college_id', DB::raw('SUM(points) as points'))
                     ->groupBy('college_id')
+                    ->havingRaw('sum(points) > 0')
                     ->orderBy('points', 'desc')
                     ->get();
-        $colleges = DB::table('colleges')
-        		    ->where('id', '>', '1')
-        		    ->where('id', '<', '10')
-        		    ->lists('name');
-       	$colleges = array_fill_keys($colleges, 0);
+
        	$rank = 0;
         $prevpoints = -1;
         $idx = 1;
@@ -36,24 +33,48 @@ class scoreBoardController extends Controller {
         		$rank++;
         	}
         	$point->rank = $rank;
-        	$colleges[$collegeName] = 1;
         	$prevpoints = $point->points;
         }
-       
-        foreach($colleges as $key=>$value)
+        foreach ($points as $key => $value)
         {
-        	if($value==0)
-        	{
-        		$score = new stdClass(); 
-        		$score->rank = $rank+$idx;
-        		$score->college = $key;
-        		$score->points = number_format(0,2);
-        		array_push($points, $score);
-
-        	}
+            if($value->rank > 10)
+                unset($points[$key]);
         }
-        
         return view('scoreBoard', compact('points'));
+    }
+
+    public function getScoreBoard()
+    {
+         $points = DB::table('scoreBoard')
+                    ->select('college_id', DB::raw('SUM(points) as points'))
+                    ->groupBy('college_id')
+                    ->havingRaw('sum(points) > 0')
+                    ->orderBy('points', 'desc')
+                    ->get();
+
+        $rank = 0;
+        $prevpoints = -1;
+        $idx = 1;
+        foreach ($points as $point)
+        {   
+            $collegeName = DB::table('colleges')->where('id', $point->college_id)->value('name');
+            $point->college = $collegeName;
+            if($prevpoints!=$point->points)
+            {
+                $rank++;
+            }
+            $point->rank = $rank;
+            $prevpoints = $point->points;
+        }
+        foreach ($points as $key => $value)
+        {
+            if($value->rank > 10)
+                unset($points[$key]);
+        }
+        $response = new stdClass(0);
+        $response->status = 200;
+        $response->data = $points;
+        return response()->json($response);
     }
 
     public function dashboard()

@@ -25,7 +25,7 @@
 // });
 
 Route::get('/', 'scoreBoardController@displayScore');
-
+Route::get('/getScoreBoard', 'scoreBoardController@getScoreBoard');
 Route::get('/admin', 'adminLoginController@login');
 Route::get('/admin/logout', 'adminLoginController@logout');
 Route::post('/admin/auth', 'adminLoginController@auth');
