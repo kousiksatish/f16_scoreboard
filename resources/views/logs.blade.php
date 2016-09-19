@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-10 col-md-offset-1">
 			<div >
 				<h2><center>Logs</center></h2>
 				<br>
@@ -21,7 +21,7 @@ var dataSet = [];
 
 @foreach($scores as $score)
 	var temp = [];
-	temp.push("{{$score->college_id}}");
+	temp.push("{{$score->name}}");
 	temp.push("{{$score->event}}");
 	temp.push("{{$score->points}}");
 	temp.push("{{$score->position}}");
@@ -35,7 +35,7 @@ $(document).ready(function(){
         "data": dataSet,
         "dom": 'C<"clear">lfrtip',
         "columns": [
-        	{ "title": "College ID" },
+        	{ "title": "College" },
         	{ "title": "Event" },
         	{ "title": "Points" },
         	{ "title": "Position" },

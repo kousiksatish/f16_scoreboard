@@ -63,7 +63,7 @@ class scoreBoardController extends Controller {
 
     public function logs()
     {
-        $scores = DB::select('select * from scoreBoard');
+        $scores = DB::select('select * from scoreBoard, colleges where scoreBoard.college_id = colleges.id');
         return view('logs', compact('scores'));
     }
 
