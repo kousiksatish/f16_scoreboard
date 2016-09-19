@@ -8,8 +8,8 @@
 				<h2><center> Dashboard</center></h2>
 				<br>
 				<div>
-					<li><a href="/admin/update">Update scores</a></li>
-					<li><a href="/admin/logs">Check logs</a></li>
+					<li><a href="{{action('scoreBoardController@displayForm')}}">Update scores</a></li>
+					<li><a href="{{action('scoreBoardController@logs')}}">Check logs</a></li>
 				</div>
 			</div>
 		</div>

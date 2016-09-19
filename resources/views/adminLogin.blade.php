@@ -8,7 +8,7 @@
 				<h2><center> Update ScoreBoard</center></h2>
 				<br>
 				<div>
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/auth') }}">
+					<form class="form-horizontal" role="form" method="POST" action="{{ action('adminLoginController@auth') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
