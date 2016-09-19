@@ -12,7 +12,7 @@ class AdminLoginController extends Controller {
 	public function login()
 	{
 		if(Session::has('user_name'))
-			return Redirect::to('/update');
+			return Redirect::to('/admin/dashboard');
 		else
 			return view('adminLogin');
     }
@@ -31,11 +31,11 @@ class AdminLoginController extends Controller {
 			if($valid == 1)
 			{
 				Session::put('user_name',$result[0]->name);
-				return Redirect::to('/update');
+				return Redirect::to('/admin/dashboard');
 			}
 			else
 			{
-				return Redirect::to('admin/ogin')->with('message', 'Incorrect Username or Password');
+				return Redirect::to('admin/login')->with('message', 'Incorrect Username or Password');
 			}
 	}
 
@@ -45,12 +45,12 @@ class AdminLoginController extends Controller {
 		if(Session::has('user_name'))
 		{
 			Session::flush();		 
-			return Redirect::to('admin/login')->with('message', 'Successfully Logged out.');
+			return Redirect::to('admin')->with('message', 'Successfully Logged out.');
 		}
 		else
 		{
 			Session::flush();
-			return Redirect::to('/display');
+			return Redirect::to('/');
 		}	
     }
 

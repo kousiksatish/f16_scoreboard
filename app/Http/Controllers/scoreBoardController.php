@@ -56,6 +56,16 @@ class scoreBoardController extends Controller {
         return view('scoreBoard', compact('points'));
     }
 
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+
+    public function logs()
+    {
+        return view('logs');
+    }
+
     public function displayForm()
     {
         $colleges = DB::select('select * from colleges');

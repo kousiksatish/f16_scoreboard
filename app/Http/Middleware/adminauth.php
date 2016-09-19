@@ -18,6 +18,6 @@ class adminauth
         if( session::has('user_name'))
             return $next($request);
         else
-            redirect::to('/display')
+            redirect::to('/')
     }
 }
