@@ -15,11 +15,28 @@
 //     return view('welcome');
 // });
 
-Route::get('/getScoreBoard', function () {
+// Route::get('/getScoreBoard', function () {
 
-	$score[0] = array("rank"=>1, "college" => "NIT", "points" => 200.50);
-	$score[1] = array("rank"=>2, "college" => "VIT", "points" => 300.25);
-	$score[2] = array("rank"=>3, "college" => "IIT", "points" => 400.00);
-	$response = array("status"=>200, "data"=>$score);
-	return response()->json($response);
+// 	$score[0] = array("rank"=>1, "college" => "NIT", "points" => 200.50);
+// 	$score[1] = array("rank"=>2, "college" => "VIT", "points" => 300.25);
+// 	$score[2] = array("rank"=>3, "college" => "IIT", "points" => 400.00);
+// 	$response = array("status"=>200, "data"=>$score);
+// 	return response()->json($response);
+// });
+ 
+Route::get('/admin/login', 'adminLoginController@login');
+Route::get('admin/logout', 'adminLoginController@logout');
+Route::post('admin/auth', 'adminLoginController@auth');
+
+Route::group(['middleware' => 'adminauth'], function () {
+
+// Route::group(['middleware' => 'adminauth'], function () {
+
+Route::get('/update', 'scoreBoardController@displayForm');
+
+Route::post('/updateScore', 'scoreBoardController@updateScore');
 });
+
+Route::get('/display', 'scoreBoardController@displayScore');
+
+?>
