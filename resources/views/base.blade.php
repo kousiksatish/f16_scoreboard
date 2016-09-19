@@ -71,7 +71,7 @@
 				@yield('content')
 			</div>
 		</div>
-		<footer class="navbar navbar-default navbar-fixed-bottom">
+		<footer class="footer">
 		<div class="container-fluid">
 			<div class="navbar-header" style="text-align: center;width:100%;float: left;">
 				<a class="navbar-brand" style="float:none" href="#">Made with &hearts; by Delta Force</a>

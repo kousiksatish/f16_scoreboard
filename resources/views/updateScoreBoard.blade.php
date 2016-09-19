@@ -50,14 +50,70 @@ select {
       <label for="events" class="col-sm-2 control-label">Event</label>
       <div class="col-sm-3">
         <select name="event" class="form-control" required>
-		  <option disabled selected value >select an event</option>
-		  <option value="English Lits"> English Lits</option>
-		  <option value="Tamil Lits">Tamil Lits</option>
-		  <option value="Hindi Lits">Hindi Lits</option>
-		  <option value="Telugu Lits">Telugu Lits</option>
-		  <option value="Culturals">Culturals</option>
-		  <option value="Photography">Photography</option>
-		  <option value="Arts">Arts</option>
+		  	<option disabled selected value >Select an event</option>
+		  	<option value="A-Capella">A-Capella</option>
+			<option value="Acoustics">Acoustics</option>
+			<option value="V Quiz">AV Quiz</option>
+			<option value="Bluff Master">Bluff Master</option>
+			<option value="uzzer Quiz">Buzzer Quiz</option>
+			<option value="Carnatic Instrumental Non Percussion">Carnatic Instrumental Non Percussion</option>
+			<option value="Carnatic Instrumental Percussion">Carnatic Instrumental Percussion</option>
+			<option value="Carnatic Vocals Solo">Carnatic Vocals Solo</option>
+			<option value="Choreo Nite (Eastern)">Choreo Nite (Eastern)</option>
+			<option value="Choreo Nite (Western)">Choreo Nite (Western)</option>
+			<option value="Cricket Quiz">Cricket Quiz</option>
+			<option value="Crossword">Crossword</option>
+			<option value="ebate">Debate</option>
+			<option value="Duet Freestyle">Duet Freestyle</option>
+			<option value="umb Charades">Dumb Charades</option>
+			<option value="Eastern Solo">Eastern Solo</option>
+			<option value="Eastern Solo Instrumentals">Eastern Solo Instrumentals</option>
+			<option value="Eastern Solo Vocals">Eastern Solo Vocals</option>
+			<option value="xtempore">Extempore</option>
+			<option value="Face Painting">Face Painting</option>
+			<option value="ashionitas">Fashionitas</option>
+			<option value="Fashionitas">Fashionitas</option>
+			<option value="Giga-Hertz">Giga-Hertz</option>
+			<option value="Halka Phulka (Grammar Quiz)">Halka Phulka (Grammar Quiz)</option>
+			<option value="Improvathon">Improvathon</option>
+			<option value="ndia Quiz">India Quiz</option>
+			<option value="AM">JAM</option>
+			<option value="Jasn-e-Mousiki (Bollywood Quiz)">Jasn-e-Mousiki (Bollywood Quiz)</option>
+			<option value="Kaatrodu Kadhai Pesava">Kaatrodu Kadhai Pesava</option>
+			<option value="Kalakkal Kalatta">Kalakkal Kalatta</option>
+			<option value="Kavithidal">Kavithidal</option>
+			<option value="Kodambakkam">Kodambakkam</option>
+			<option value="Kolam">Kolam</option>
+			<option value="Koothambalam (Street Play)">Koothambalam (Street Play)</option>
+			<option value="Kuch Na Kaho (Dumb C)">Kuch Na Kaho (Dumb C)</option>
+			<option value="Kuraloviyam">Kuraloviyam</option>
+			<option value="Literature Quiz">Literature Quiz</option>
+			<option value="Live Photography">Live Photography</option>
+			<option value="one Wolf Quiz">Lone Wolf Quiz</option>
+			<option value="Mask Making">Mask Making</option>
+			<option value="Mr and Miss Festember">Mr and Miss Festember</option>
+			<option value="Paper Dressing">Paper Dressing</option>
+			<option value="Pot Pourri">Pot Pourri</option>
+			<option value="Puzzlechamp">Puzzlechamp</option>
+			<option value="Rochak Mantrana">Rochak Mantrana</option>
+			<option value="Sakalakala Vallavan">Sakalakala Vallavan</option>
+			<option value="Scrabble">Scrabble</option>
+			<option value="Shadow Art">Shadow Art</option>
+			<option value="plit Ent Quiz">Split Ent Quiz</option>
+			<option value="Tarangini">Tarangini</option>
+			<option value="Tatkaleen Bhashan (Extempore)">Tatkaleen Bhashan (Extempore)</option>
+			<option value="Tattoo Making">Tattoo Making</option>
+			<option value="Telugu Cine Quiz">Telugu Cine Quiz</option>
+			<option value="Telugu Dumb Charades">Telugu Dumb Charades</option>
+			<option value="Theatrix">Theatrix</option>
+			<option value="Uyarthani Semmozhi">Uyarthani Semmozhi</option>
+			<option value="Vaad vivadh(debate)">Vaad vivadh(debate)</option>
+			<option value="Varthai Vilayattu">Varthai Vilayattu</option>
+			<option value="Villupaatu">Villupaatu</option>
+			<option value="Wall Painting">Wall Painting</option>
+			<option value="Western Freestyle Solo">Western Freestyle Solo</option>
+			<option value="Whats The Good Word">Whats The Good Word</option>
+			<option value="Others">Others</option>
 		</select>
       </div>
   </div>
