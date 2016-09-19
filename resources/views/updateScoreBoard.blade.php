@@ -29,7 +29,7 @@ select {
 
 <div style="padding:20px;">
 
-<form class="form-horizontal" method="post" action="send_gcm.php">
+<form class="form-horizontal" method="post" action=" {{ action('scoreBoardController@updateScore') }}" >
 
 
 

@@ -79,27 +79,29 @@ class scoreBoardController extends Controller {
         $college_id = $request->get('college');
         $event = $request->get('event');
         $points = $request->get('points');
-        $rows = DB::select('select * from scoreBoard where college_id = ? and event = ?',[$college_id,$event]);
+        $position = $request->get('position');
+        // $rows = DB::select('select * from scoreBoard where college_id = ? and event = ?',[$college_id,$event]);
         $date = date('Y-m-d H:i:s');   
-            if(count($rows) < 1)
-            {
+            // if(count($rows) < 1)
+            // {
 
                 DB::table('scoreBoard')->insert(array(
 
                                             'college_id'    => $college_id,
                                             'event'         => $event,
                                             'points'        => $points,
+                                            'position'      => $position,
                                             'created_at'    => $date,
                                             'updated_at'    => $date
                                             ));
-            }
+            // }
 
-            else
-            {
-                DB::table('scoreBoard')->where('college_id' , $college_id)->update(array('points' => $points, 'updated_at' => $date));
+            // else
+            // {
+            //     DB::table('scoreBoard')->where('college_id' , $college_id)->update(array('points' => $points, 'updated_at' => $date));
              
 
-            }
+            // }
 
             return redirect()->action('scoreBoardController@displayForm')->with('status', 'ScoreBoard updated!');
     }
