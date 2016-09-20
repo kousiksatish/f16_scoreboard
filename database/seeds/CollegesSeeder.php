@@ -10,7 +10,6 @@ class CollegesSeeder extends Seeder
      * @return void
      */
        public $college_list = [
-        "Others",
         "A.C. College of Engineering and Technology",
         "A.M.S College of Engineering",
         "Aalim Muhammed Salegh College Of Engineering",
