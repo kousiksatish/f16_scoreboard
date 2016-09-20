@@ -24,7 +24,7 @@ class AdminAuth
         }
         else
         {
-            return Redirect::to('/admin/login')->with('message','Login inorder to update the scoreboard!');
+            return Redirect::to('/admin')->with('message','Login inorder to update the scoreboard!');
         }
         
     }

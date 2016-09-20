@@ -22,7 +22,7 @@ class AdminLoginController extends Controller {
 			$username=$request->get('email'); 
 			$password=$request->get('password');
 			$password = sha1($password);
-			echo($username.' '.$password);
+			// echo($username.' '.$password);
 			$result = DB::select('select * from users where email = ? and password = ?', [$username,$password]);
 			
 			if(count($result)>0) $valid = 1;
@@ -35,7 +35,7 @@ class AdminLoginController extends Controller {
 			}
 			else
 			{
-				return Redirect::to('admin/login')->with('message', 'Incorrect Username or Password');
+				return Redirect::to('admin')->with('message', 'Incorrect Username or Password');
 			}
 	}
 

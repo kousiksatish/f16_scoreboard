@@ -23,15 +23,21 @@ class scoreBoardController extends Controller {
 
        	$rank = 0;
         $prevpoints = -1;
-        $idx = 1;
+        $idx = 0;
         foreach ($points as $point)
         {   
             $collegeName = DB::table('colleges')->where('id', $point->college_id)->value('name');
             $point->college = $collegeName;
         	if($prevpoints!=$point->points)
         	{
+                $rank = $rank + $idx;
+                $idx = 0;
         		$rank++;
         	}
+            else
+            {
+                $idx++;
+            }
         	$point->rank = $rank;
         	$prevpoints = $point->points;
         }
@@ -54,14 +60,20 @@ class scoreBoardController extends Controller {
 
         $rank = 0;
         $prevpoints = -1;
-        $idx = 1;
+        $idx = 0;
         foreach ($points as $point)
         {   
             $collegeName = DB::table('colleges')->where('id', $point->college_id)->value('name');
             $point->college = $collegeName;
             if($prevpoints!=$point->points)
             {
+                $rank = $rank + $idx;
+                $idx = 0;
                 $rank++;
+            }
+            else
+            {
+                $idx++;
             }
             $point->rank = $rank;
             $prevpoints = $point->points;
